@@ -81,3 +81,4 @@ plane_ani = animation.FuncAnimation(fig, update_plot, frames=frame_amount,
 
 plt.show()
 
+
