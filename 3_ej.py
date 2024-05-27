@@ -20,6 +20,8 @@ y = np.ones(len(t))*altitude
 frame_amount = len(t)
 #interval = 50 # [ms] go to the next frame every 50 ms
 
+nombre = "michel"
+
 def update_plot(num):
     plane_trajectory.set_data(x[0:num],y[0:num])
     plane_1.set_data([x[num]-40,x[num]+20],[y[num],y[num]])
@@ -27,7 +29,10 @@ def update_plot(num):
     plane_3.set_data([x[num]-20,x[num]],[y[num]-0.3,y[num]])
     plane_4.set_data([x[num]-40,x[num]-30],[y[num]+0.15,y[num]])
     plane_5.set_data([x[num]-40,x[num]-30],[y[num]-0.15,y[num]])
-    text_ax0.set_text('Time: {:.2f} hrs'.format(t[num]))
+    #text_ax0.set_text('Time: {:.2f} hrs'.format(t[num]))
+    if num <= len(nombre):
+        text_ax0.set_text(nombre[0:num])
+    
 
     return plane_trajectory,plane_1,plane_2,plane_3,plane_4,plane_5,text_ax0
 
@@ -72,7 +77,7 @@ plt.grid(True)
 
 
 plane_ani = animation.FuncAnimation(fig, update_plot, frames=frame_amount, 
-                                    interval=5,repeat=True,blit=True)
+                                    interval=30,repeat=True,blit=True)
 
 plt.show()
 
