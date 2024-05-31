@@ -25,6 +25,6 @@ def update(num):
         nx.draw_networkx_edges(G, pos, edgelist=edges, width=2, edge_color='blue')
 
 # Crear la animación
-ani = animation.FuncAnimation(fig, update, frames=len(path), interval=1000, repeat=True)
+ani = animation.FuncAnimation(fig, update, frames=len(path), interval=100, repeat=True)
 
 plt.show()
